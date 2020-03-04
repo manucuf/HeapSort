@@ -9,4 +9,6 @@ Usage:
 > ./launchTest.sh
 
 or directly
-> ./TesinaAlgoritmi [repetition index] [iterations number for different size] [max value for random generated array] [filename prefix] 
+> ./TesinaAlgoritmi [repetition index] [iterations number for different size] [max value for random generated array] [filename prefix]
+
+Tested on macOS 10.15. Please recompile sources for other platforms 
