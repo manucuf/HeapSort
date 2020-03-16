@@ -8,7 +8,7 @@ import PlotHelper
 
 xaxis = 'Size' # None
 yaxis = 'Time' # None
-figuretitle = 'Build Max Heap' #None
+figuretitle = ['HeapSort Performance', 'HeapSort comparison with InsertionSort'] #None
 unitofmeasure = 'Time (s)' # None
 delimiter = ',' # None
 
@@ -85,7 +85,7 @@ print("Generating plots ...")
 
 print("\nPlottiing table: \n" + str(tablestoplot[0]) + '\n' + str(tablestoplot[1]))
 # Plot using PlotHelper
-PlotHelper.plotcsvmetric(tablestoplot[0], xaxis, yaxis, figuretitle, unitofmeasure, False)
-PlotHelper.plotcsvmetric(tablestoplot[0], xaxis, yaxis, figuretitle, unitofmeasure, False, tablestoplot[1])
+PlotHelper.plotcsvmetric(tablestoplot[0], xaxis, yaxis, figuretitle[0], unitofmeasure, False)
+PlotHelper.plotcsvmetric(tablestoplot[0], xaxis, yaxis, figuretitle[1], unitofmeasure, False, tablestoplot[1])
 
 # print("\nPNG Graph saved in " + dirname)

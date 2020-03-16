@@ -44,20 +44,23 @@ def plotcsvmetric(csvtable, xaxis, parameter, figuretitle, unitofmeasure, displa
 
     npdataarray2 = np.array(dataarray2)
 
-    ax.plot(npx, npdataarray)
+    ax.plot(npx, npdataarray, label='HeapSort average trend', color='blue')
 
     # Plot, labeling and options
     if (secondtable is not None):
-        ax.plot(npx, npdataarray2)
+        ax.plot(npx, npdataarray2, label='InsertionSort average trend', color='orange')
 
     # Same class function
-    ax.plot(npx, 1e-08*npx*np.log2(npx))
+    ax.plot(npx, 1e-08*npx*np.log2(npx), label="O(n*log2(n)) function", color='green')
+    ax.plot(npx, 0.14e-09*np.power(npx, 2), label="O(n^2) function", color='purple')
+
 
     if (displayaverage == True):
         ax.set(xlabel=xaxis, ylabel=unitofmeasure, title = figuretitle + '\n\nAverage = ' + str(average))
     else:
         ax.set(xlabel=xaxis, ylabel=unitofmeasure, title = figuretitle)
     ax.grid()
+    ax.legend(loc='upper left')
 
     # Saving PNG
     fig.savefig(figuretitle + ".png")

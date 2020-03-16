@@ -39,7 +39,12 @@ public:
     
     void openFile(string fileName);
     void closeFile();
-    void storeOnFile(int repetitions, vector<int> sizes);
+    
+    /** Stores elapsed time on csv file, where each elapsedTime element matches to relative size
+     @param repetition number of elements to store on csv file
+     @param sizes array where each element is a size for each repetition
+    **/
+    void storeOnFile(int repetition, vector<int> sizes);
     
 };
 
