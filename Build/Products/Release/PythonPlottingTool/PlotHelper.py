@@ -53,7 +53,7 @@ def plotcsvmetric(csvtable, xaxis, parameter, figuretitle, unitofmeasure, displa
     if (secondtable is not None):
         ax.plot(npx, npdataarray2, label='InsertionSort average trend', color='orange')
         # Same class function
-        ax.plot(npx, 0.14e-09*np.power(npx, 2), label="O(n^2) function", color='purple')
+        ax.plot(npx, 0.28e-09*np.power(npx, 2), label="O(n^2) function", color='purple')
 
     if (displayaverage == True):
         ax.set(xlabel=xaxis, ylabel=unitofmeasure, title = figuretitle + '\n\nAverage = ' + str(average))

@@ -1,8 +1,10 @@
 #!/bin/bash
 
-declare -i repetitions=10
+declare -i repetitions=3
 declare -i maxValue=1000
-declare -i iterations=100
+declare -i iterations=70
+
+rm ./PythonPlottingTool/*.csv
 
 for ((rep=1; rep<=repetitions; rep++))
 do
@@ -10,14 +12,14 @@ do
     echo "Repetition: $rep"
     filename="./res"
 
-    if test -f "$filename*.csv"; then
-      rm $filename
-    fi
-    
+    test -f "$filename*.csv" && rm $filename
+
     ./TesinaAlgoritmi $rep $iterations $maxValue $filename
+    mv $filename*.csv ./PythonPlottingTool
+    
+done
 
-mv $filename*.csv ./PythonPlottingTool
 cd PythonPlottingTool
-python plot.py
+python plot.py $repetitions
 
-echo 'Done!'
+echo "Done!"

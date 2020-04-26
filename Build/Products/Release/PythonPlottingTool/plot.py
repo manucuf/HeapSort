@@ -17,8 +17,10 @@ csvfilesHeap = ['resBuildMaxHeap1.csv', 'resBuildMaxHeap2.csv', 'resBuildMaxHeap
 csvfilesInsertion = ['resInsertionSort1.csv', 'resInsertionSort2.csv', 'resInsertionSort3.csv', 'resInsertionSort4.csv', 'resInsertionSort5.csv', \
                'resInsertionSort6.csv', 'resInsertionSort7.csv', 'resInsertionSort8.csv', 'resInsertionSort9.csv', 'resInsertionSort10.csv']
 csvcontainer = []
-csvcontainer.append(csvfilesHeap)
-csvcontainer.append(csvfilesInsertion)
+
+index = int(sys.argv[1])-1
+csvcontainer.append(csvfilesHeap[:index])
+csvcontainer.append(csvfilesInsertion[:index])
 
 tablestoplot = []
 
